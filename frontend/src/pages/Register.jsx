@@ -18,7 +18,7 @@ const Register = () => {
         setSubmitting(true);
         console.log(form);
 
-        axios.post("https://sudai.onrender.com/api/auth/register", {
+        axios.post(`${import.meta.env.backend_url}/api/auth/register`, {
             email: form.email,
             fullName: {
                 firstName: form.firstname,

@@ -12,7 +12,7 @@ const ChatSidebar = ({ chats, activeChatId, onSelectChat, onNewChat, open }) => 
   const handleLogout = async () => {
     try {
       // Call logout endpoint to clear cookie on server
-      await axios.post("https://sudai.onrender.com/api/auth/logout", {}, {
+      await axios.post(`${import.meta.env.backend_url}/api/auth/logout`, {}, {
         withCredentials: true
       });
     } catch (err) {
@@ -27,7 +27,7 @@ const ChatSidebar = ({ chats, activeChatId, onSelectChat, onNewChat, open }) => 
     e.stopPropagation();
     if (window.confirm('Are you sure you want to delete this chat?')) {
       try {
-        await axios.delete(`https://sudai.onrender.com/api/chat/${chatId}`, {
+        await axios.delete(`${import.meta.env.backend_url}/api/chat/${chatId}`, {
           withCredentials: true
         });
         dispatch(deleteChatAction(chatId));
