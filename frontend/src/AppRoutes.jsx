@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect(() => {
     let mounted = true
-    axios.get(`${import.meta.env.backend_url}/api/auth/verify`, { withCredentials: true })
+    axios.get(`${import.meta.env.VITE_API_URL}/api/auth/verify`, { withCredentials: true })
       .then(() => { if (mounted) setIsAuth(true) })
       .catch(() => { if (mounted) setIsAuth(false) })
     return () => { mounted = false }

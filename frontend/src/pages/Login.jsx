@@ -21,7 +21,7 @@ const Login = () => {
 
         console.log(form);
 
-        axios.post(`${import.meta.env.backend_url}/api/auth/login`, {
+        axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
             email: form.email,
             password: form.password
         },

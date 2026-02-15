@@ -18,7 +18,7 @@ const Register = () => {
         setSubmitting(true);
         console.log(form);
 
-        axios.post(`${import.meta.env.backend_url}/api/auth/register`, {
+        axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, {
             email: form.email,
             fullName: {
                 firstName: form.firstname,
