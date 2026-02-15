@@ -18,7 +18,7 @@ const chatRoutes = require("./routes/chat.route")
 
 // middlewares
 app.use(cors({
-    origin :process.env.FRONTEND_URI,
+    origin :["http://localhost:5173","https://sud-ai-rag-frontend.vercel.app"],
     credentials : true
 }))
 app.use(express.json());
